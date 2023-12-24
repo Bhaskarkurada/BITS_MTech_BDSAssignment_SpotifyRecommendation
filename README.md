@@ -42,3 +42,46 @@ Availability could take precedence once the user accepts the recommendation and 
 **End of Part-1**
 
 **Part-2 - OLTP Read/Write Queries on Mongo DB**
+
+**Loom Video Link for Pymongo - Read/Write Queries**
+
+https://www.loom.com/share/1398b11cc5c84cd6afd3c2fdc29be7df?sid=9abbf41c-17a6-4f98-9673-26840758af39
+
+**Also Find Mongo Compass IDE & Pymongo Screenshots**
+
+<img width="861" alt="MongoCompass_ModelScreenshot" src="https://github.com/Bhaskarkurada/BITS_MTech_BDSAssignment_SpotifyRecommendation/assets/119121333/f98a5b9d-064c-4a7a-8561-476d9f589001">
+
+**End of Part-2**
+
+**Part-3 - Pyspark & MongoDB Connection Setup & OLAP Queries**
+
+**Loom Video Link for Spark - OLAP Queries**
+
+https://www.loom.com/share/d26e9a49c8ca497788a5fc1d053a6fb6 
+
+**Commands to connect to Pyspark and connect to Mongo DB and then finally run the OLAP aggregate queries**
+
+pyspark --packages org.mongodb.spark:mongo-spark-connector_2.12:3.0.1
+
+df = spark.read.format("mongo").option("uri",
+"mongodb+srv://kuradabhaskar:fiYR58qHxeMqlE1P@cluster0.8jajr3e.mongodb.net/SpotifyMusicRecommDB.MasterAlbumInfo").load()
+
+df.show()
+
+from pyspark.sql.functions import col
+
+avg_df = df.groupBy("album_name").agg({"popularity": "avg"}) 
+top_10_avg_albums = avg_df.orderBy(col("avg(popularity)").desc()).limit(10) 
+top_10_avg_albums.show()
+
+avg_df = df.groupBy("artists").agg({"popularity": "avg"}) 
+top_10_avg_artists = avg_df.orderBy(col("avg(popularity)").desc()).limit(10) 
+top_10_avg_artists.show()
+
+avg_df = df.groupBy("track_genre").agg({"popularity": "avg"}) 
+top_10_avg_genres = avg_df.orderBy(col("avg(popularity)").desc()).limit(10) 
+top_10_avg_genres.show()
+
+<img width="688" alt="Spark_OLAP_Queries" src="https://github.com/Bhaskarkurada/BITS_MTech_BDSAssignment_SpotifyRecommendation/assets/119121333/f1c44b4a-3f4d-4984-a081-cac925a77626">
+
+
