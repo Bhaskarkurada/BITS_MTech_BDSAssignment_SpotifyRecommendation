@@ -1,11 +1,14 @@
 # BITS_MTech_BDSAssignment_SpotifyRecommendation
 
-Architecture diagram of our system
-
-<img width="836" alt="Architecture_1" src="https://github.com/Bhaskarkurada/BITS_MTech_BDSAssignment_SpotifyRecommendation/assets/119121333/6043ae52-2e3a-4f35-ba44-34f0a62465ba">
 
 
 Our project focuses on developing a Music Recommendation System using the Spotify  Playlist Dataset.  Users can search for songs by track name and artist name, select their preferred songs from the list, and receive relevant recommendations from the system.
 
-Preprocessing stages
-<img width="951" alt="Architecture_2" src="https://github.com/Bhaskarkurada/BITS_MTech_BDSAssignment_SpotifyRecommendation/assets/119121333/d094e08d-a0c4-416f-971c-fb93c0d160a3">
+## Team Members
+1) Bhaskar Kurada - 2022OG04023 - **Contribution:** Installing Spark on local, Connecting Sparkshell/Pyspark on local command line troubleshooting and the architecture diagram creation on draw.io, Github Creation
+2) Mahesh Kammari - 2022OG04033 - **Contribution:** Creating MongoDB Cloud Instance, MongoDB and Pyspark connection troubleshooting, MongoDB Data Model and queries, Data Synthesization and loom video setup
+
+Architecture diagram of our system - BigData Recommendation Pipeline
+
+
+![SpotifyRecommendationSystem](https://github.com/Bhaskarkurada/BITS_MTech_BDSAssignment_SpotifyRecommendation/assets/119121333/ea144531-1a6b-4ff1-8136-e4d236a08b74)
