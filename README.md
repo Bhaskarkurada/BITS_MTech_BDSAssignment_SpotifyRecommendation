@@ -8,8 +8,6 @@ Our project focuses on developing a Music Recommendation System using the Spotif
 1) Bhaskar Kurada - 2022OG04023 - **Contribution:** Installing Spark on local, Connecting Sparkshell/Pyspark on local command line troubleshooting and the architecture diagram creation on draw.io, Github Creation
 2) Mahesh Kammari - 2022OG04033 - **Contribution:** Creating MongoDB Cloud Instance, MongoDB and Pyspark connection troubleshooting, MongoDB Data Model and queries, Data Synthesization and loom video setup
 
-**Github Link**
-https://github.com/Bhaskarkurada/BITS_MTech_BDSAssignment_SpotifyRecommendation.git
 
 **Part1 - Architecture diagram of our system - BigData Recommendation Pipeline**
 
@@ -87,4 +85,6 @@ top_10_avg_genres.show()
 
 <img width="688" alt="Spark_OLAP_Queries" src="https://github.com/Bhaskarkurada/BITS_MTech_BDSAssignment_SpotifyRecommendation/assets/119121333/f1c44b4a-3f4d-4984-a081-cac925a77626">
 
+**Github Link**
+https://github.com/Bhaskarkurada/BITS_MTech_BDSAssignment_SpotifyRecommendation.git
 
