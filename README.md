@@ -8,7 +8,37 @@ Our project focuses on developing a Music Recommendation System using the Spotif
 1) Bhaskar Kurada - 2022OG04023 - **Contribution:** Installing Spark on local, Connecting Sparkshell/Pyspark on local command line troubleshooting and the architecture diagram creation on draw.io, Github Creation
 2) Mahesh Kammari - 2022OG04033 - **Contribution:** Creating MongoDB Cloud Instance, MongoDB and Pyspark connection troubleshooting, MongoDB Data Model and queries, Data Synthesization and loom video setup
 
-Architecture diagram of our system - BigData Recommendation Pipeline
-
+**Part1 - Architecture diagram of our system - BigData Recommendation Pipeline**
 
 ![SpotifyRecommendationSystem](https://github.com/Bhaskarkurada/BITS_MTech_BDSAssignment_SpotifyRecommendation/assets/119121333/ea144531-1a6b-4ff1-8136-e4d236a08b74)
+
+**Brief Overview of the System components and Rationale**
+
+**Components**
+**FrontendAPIs:** APIs to connect the mobile App to the ML Recommendation Engine and the underlying OLTP System
+**ML Recommendation Engine:** NLP based ML Algorithm to find similar documents for recommendation basis the attributes in the databset
+**Streaming Component:** Apache Kafka could be used here to stream the data from OLTP databse related services
+**Backend APIs:** APIs to connect the MongoDB to the streaming component
+**OLTP Sytem:** MongoDB to store the user details, playlists, search history and recommendations provided by ML library 
+**OLAP System:** SparkSQL to load the master data as well as to run the analytics queries 
+**Pyspark:** Utilized for preprocessing the Spotify Dataset.
+**ETL/Batch processing jobs:** To collate the user search and playlist history to dervie analytical queries for better sales and growth 
+
+**Rationale for the design choices**
+**OLTP System:** We have chosen the MongoDB which is a document based NOSQL DB to store the search cum playlist history and also the associated recommendations
+MongoDB natively provides Consistency and Performance tradeoffs with scale  and durability with various read and write choices
+
+Considering this problem of recommendation only being a part of the overall spotify app, consistency in the recommendations basis user playlist history and the search criteria takes a notch high priority than the availability.
+
+Availability could take precedence once the user accepts the recommendation and starts playing the track which is not the scope of the project
+
+**OLTP Data Model:**
+
+<img width="326" alt="OLTP_DataModel" src="https://github.com/Bhaskarkurada/BITS_MTech_BDSAssignment_SpotifyRecommendation/assets/119121333/9005f3ab-a6aa-42c7-8f7d-bc66242748c0">
+
+
+**OLAP System:** Spark provides  a powerful and flexible framework that can integrate well with various NoSQL databases. like Mongo, Cassandara, Dynamo and also provides RDD Dataframes which can handle huge load of data from both batch processing and also running ML based analytics on them. 
+
+**End of Part-1**
+
+**Part-2 - OLTP Read/Write Queries on Mongo DB**
